@@ -1,0 +1,30 @@
+﻿<html charset="utf-8">
+	<script src="possibleRootLetters.js" charset="utf-8"></script>
+	<style>
+		#roots{line-height: 54px; font-size: 150%;}
+		#test{color:blue;}
+		.letter{
+			-webkit-transition: background 0.5s, font-size 0.5s; 
+   			/* For Safari 3.1 to 6.0 */
+    		transition: background 0.5s, font-size 0.5s;
+		}
+		.letter:hover{background: #E0E0E0; font-size: 200%;}
+	</style>
+	<body>
+		<div id="roots"></div>
+	</body>
+	<script>
+		var renderpossibleRootLetters = function(arr) {
+			var out="&nbsp;&nbsp;ཀ&nbsp;&nbsp;";
+			for(var i=1; i<=arr.length; i++){
+				if(i%10==0) out+="<br>";
+				if(arr[i]) out+='&nbsp;&nbsp;<span class="letter">'+arr[i]+"</span>&nbsp;&nbsp;";
+			}
+			return out;
+		}
+
+		var out=renderpossibleRootLetters(possibleRootLetters);
+		document.getElementById("roots").innerHTML=out;
+	</script>
+
+</html>
